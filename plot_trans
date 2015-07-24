@@ -1,0 +1,25 @@
+#!/usr/bin/gnuplot -persist
+
+reset
+
+set terminal wxt
+
+dx = 0.002
+
+d(y) = ($0 == 0) ? (y1 = y, 1/0) : (y2 = y1, y1 = y, (y1-y2)/dx)
+
+set grid x y2
+set xlabel 'V_{G} / V'
+set ylabel 'I_{d} / A'
+set y2label 'g_{d} / Ω^{-1}'
+set format y '%1.1g'
+set format y2 '%1.1g'
+set ytics nomirror
+set y2tics nomirror
+unset grid
+set autoscale  y
+set autoscale y2
+
+
+set datafile separator ","
+p 'transfer.csv' u 1:(d($2)) w l t 'g_{m}' axes x1y2, 'transfer.csv' u 1:2 w l t 'I_{d}' axes x1y1
