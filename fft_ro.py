@@ -23,7 +23,7 @@ plt.ylabel("$V_{out}$ / V")
 plt.show()
 
 plt.plot(f, numpy.absolute(A))
-plt.xlim([1, 50])
+plt.xlim([0, 50])
 #plt.ylim([-0.5, 1])
 plt.title("TFET ring oscillator: FFT")
 plt.xlabel("$f$ / THz")

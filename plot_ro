@@ -1,9 +1,9 @@
 #!/bin/gnuplot -persist
 
-dt = 2e-15
+dt = 1e-15
 
 set terminal wxt
 set ylabel "V_{out, i} / V"
-set xlabel "t / s"
-set title "CNTFET ring-oscillator transient signal"
-p for [i=0:2] sprintf("%d.strip", i) u ($0 * dt):1 w l ls i+1 lw 2 t sprintf("gate signal %d", i)
+set xlabel "t / ps"
+set title "CNT-TFET ring-oscillator transient signal"
+p for [i=0:2] sprintf("%d.strip", i) u ($0 * dt * 1e12):1 w l ls i+1 lw 2 notitle#t sprintf("gate signal %d", i)

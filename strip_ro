@@ -1,7 +1,7 @@
 #!/bin/zsh
-#scp fabian@134.130.38.8:circuit/ro_tfet.log logfile_ro
+#scp fabian@134.130.38.8:circuit/ro.log logfile_ro
 
 for i in 0 1 2
 do
-  cat logfile_ro1 | grep -w "V_out\[$i" | sed "s/V_out\[$i\] = //" > $i.strip
+  cat logfile_ro | grep -w "V_out\[$i" | sed "s/V_out\[$i\] = //" > $i.strip
 done
