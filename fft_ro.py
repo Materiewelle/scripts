@@ -2,9 +2,9 @@ import numpy
 import matplotlib.pyplot as plt
 
 V = []
-dt = 2e-15
+dt = 6e-15
 
-file = open("2.strip")
+file = open("0.strip")
 m = 0
 for line in file:
     V.append(float(line.strip("\n")))
