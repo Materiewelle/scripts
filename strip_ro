@@ -1,5 +1,5 @@
 #!/bin/zsh
-#scp fabian@134.130.38.8:circuit/ro.log logfile_ro
+scp fabian@134.130.38.8:sw/local/logfile_ro logfile_ro
 
 for i in 0 1 2
 do
